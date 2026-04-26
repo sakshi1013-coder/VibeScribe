@@ -4,7 +4,7 @@ import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { signIn } from "@/lib/auth-client";
 import { motion } from "framer-motion";
-import { LogIn, User, Lock, AlertCircle, Loader2 } from "lucide-react";
+import { LogIn, User, Lock, AlertCircle, Loader2, Zap } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 export default function LoginPage() {
