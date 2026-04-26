@@ -1,0 +1,146 @@
+@import "tailwindcss";
+
+:root {
+  --moss-green: #8F9D68;
+  --old-lace: #FFF8EB;
+  --iris: #7B57CE;
+  --iris-dark: #37216b;
+  --iris-text: #4e348f;
+  
+  --background: var(--old-lace);
+  --foreground: var(--iris-dark);
+  
+  --radius: 2rem;
+}
+
+@layer base {
+  body {
+    background-color: var(--old-lace);
+    color: var(--iris-dark);
+    font-family: 'Inter', sans-serif;
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+}
+
+/* 🧊 Premium Glass Transcription Card (Light Theme Version) */
+.premium-glass-card {
+  background: rgba(123, 87, 206, 0.05);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid rgba(123, 87, 206, 0.15);
+  border-radius: 40px;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  box-shadow:
+    inset 0 1px 2px rgba(255, 255, 255, 0.8),
+    0 20px 40px rgba(123, 87, 206, 0.08);
+}
+
+.premium-glass-card:hover {
+  transform: translateY(-6px) scale(1.005);
+  box-shadow:
+    inset 0 1px 3px rgba(255, 255, 255, 1),
+    0 30px 60px rgba(123, 87, 206, 0.12);
+}
+
+/* ✨ Glass Light Effect */
+.premium-glass-card::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+    45deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.1) 45%,
+    rgba(255, 255, 255, 0.3) 50%,
+    rgba(255, 255, 255, 0.1) 55%,
+    transparent 100%
+  );
+  transform: rotate(-25deg);
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* 🎯 Premium Glass Button (Contrast Focus) */
+.glass-button-premium {
+  background: rgba(123, 87, 206, 0.08);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(123, 87, 206, 0.2);
+  transition: all 0.3s ease;
+  color: var(--iris-text);
+  font-weight: 700;
+}
+
+.glass-button-premium:hover {
+  background: rgba(123, 87, 206, 0.15);
+  transform: scale(1.05);
+  box-shadow: 0 5px 15px rgba(123, 87, 206, 0.1);
+  color: var(--iris-dark);
+}
+
+/* 🔤 Contrast-Rich Typography */
+.heading-premium {
+  color: var(--iris-dark);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+}
+
+.body-premium {
+  color: var(--iris-text);
+  line-height: 1.8;
+  font-weight: 500;
+}
+
+.muted-premium {
+  color: rgba(123, 87, 206, 0.5);
+  font-weight: 600;
+  letter-spacing: 0.1em;
+}
+
+/* Sidebar Custom */
+.sidebar-moss {
+  background-color: var(--moss-green);
+  color: var(--old-lace);
+}
+
+/* Background Enhancement Utility */
+.blob-depth {
+  position: absolute;
+  width: 600px;
+  height: 600px;
+  filter: blur(100px);
+  border-radius: 50%;
+  z-index: -1;
+  opacity: 0.1;
+  animation: float-slow 25s infinite alternate;
+}
+
+@keyframes float-slow {
+  from { transform: translate(0, 0) scale(1); }
+  to { transform: translate(80px, 120px) scale(1.1); }
+}
+
+.noise {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.03;
+  z-index: 9999;
+  pointer-events: none;
+  background-image: url("https://grainy-gradients.vercel.app/noise.svg");
+}
+
+
+
+
+
+
+
