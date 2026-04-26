@@ -54,15 +54,17 @@ export default function LoginPage() {
               <Zap size={40} fill="white" />
             </div>
 
-            <h1 className="text-4xl font-black tracking-tight text-lace">VibeScribe</h1>
-            <p className="mt-3 text-lace/40 text-xs font-bold uppercase tracking-[0.3em]">Elevated Intelligence</p>
+            <h1 className="text-4xl font-black tracking-tight text-iris-dark">VibeScribe</h1>
+            <p className="mt-3 text-iris-dark/40 text-xs font-bold uppercase tracking-[0.3em]">Elevated Intelligence</p>
+
           </div>
 
 
 
           <form onSubmit={handleLogin} className="space-y-6">
             <div className="space-y-2">
-              <label className="text-sm font-medium text-neutral-300 ml-1">Username</label>
+              <label className="text-sm font-bold text-iris-text/70 ml-1">Username</label>
+
               <div className="relative">
                 <div className="absolute left-3 top-1/2 -translate-y-1/2 text-neutral-500">
                   <User size={18} />
@@ -71,16 +73,18 @@ export default function LoginPage() {
                   type="text"
                   value={username}
                   onChange={(e) => setUsername(e.target.value)}
-                  className="w-full rounded-xl border border-white/5 bg-white/5 py-4 pl-12 pr-4 text-lace placeholder-lace/20 outline-none transition-all focus:border-iris/50 focus:bg-white/10"
+                  className="w-full rounded-xl border border-iris/10 bg-iris/5 py-4 pl-12 pr-4 text-iris-dark placeholder-iris-dark/30 outline-none transition-all focus:border-iris/50 focus:bg-iris/10"
                   placeholder="Enter username"
                   required
                 />
+
               </div>
             </div>
 
 
             <div className="space-y-2">
-              <label className="text-sm font-medium text-neutral-300 ml-1">Password</label>
+              <label className="text-sm font-bold text-iris-text/70 ml-1">Password</label>
+
               <div className="relative">
                 <div className="absolute left-3 top-1/2 -translate-y-1/2 text-neutral-500">
                   <Lock size={18} />
@@ -89,10 +93,11 @@ export default function LoginPage() {
                   type="password"
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
-                  className="w-full rounded-xl border border-white/5 bg-white/5 py-4 pl-12 pr-4 text-lace placeholder-lace/20 outline-none transition-all focus:border-iris/50 focus:bg-white/10"
+                  className="w-full rounded-xl border border-iris/10 bg-iris/5 py-4 pl-12 pr-4 text-iris-dark placeholder-iris-dark/30 outline-none transition-all focus:border-iris/50 focus:bg-iris/10"
                   placeholder="••••••••"
                   required
                 />
+
               </div>
             </div>
 
@@ -134,9 +139,10 @@ export default function LoginPage() {
 
           </form>
 
-          <p className="mt-10 text-center text-[10px] font-black tracking-[0.4em] text-lace/20 uppercase">
+          <p className="mt-10 text-center text-[10px] font-black tracking-[0.4em] text-iris-dark/20 uppercase">
             VibeScribe v2.0 • Intelligence Redefined
           </p>
+
 
 
         </div>
