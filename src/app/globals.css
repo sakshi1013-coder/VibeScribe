@@ -138,9 +138,26 @@
   background-image: url("https://grainy-gradients.vercel.app/noise.svg");
 }
 
+/* Buttons */
+.btn-iris {
+  background-color: var(--iris) !important;
+  color: white !important;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
 
+.btn-iris:hover {
+  background-color: var(--iris-dark) !important;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(123, 87, 206, 0.2);
+}
 
+.btn-moss {
+  background-color: var(--moss-green) !important;
+  color: white !important;
+}
 
-
-
+.btn-moss:hover {
+  background-color: #6a744d !important;
+  transform: translateY(-2px);
+}
 

@@ -8,10 +8,11 @@ import { LogIn, User, Lock, AlertCircle, Loader2, Zap } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 export default function LoginPage() {
-  const [username, setUsername] = useState("");
+  const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
+
   const router = useRouter();
 
   const handleLogin = async (e: React.FormEvent) => {
@@ -20,10 +21,11 @@ export default function LoginPage() {
     setError("");
 
     try {
-      const { data, error: authError } = await signIn.username({
-        username,
+      const { data, error: authError } = await signIn.email({
+        email,
         password,
       });
+
 
       if (authError) {
         setError(authError.message || "Invalid credentials");
@@ -50,45 +52,45 @@ export default function LoginPage() {
           <div className="absolute top-0 left-0 w-full h-1 bg-iris"></div>
 
           <div className="mb-10 text-center">
-            <div className="mx-auto mb-6 flex h-20 w-20 items-center justify-center rounded-3xl bg-iris text-white shadow-xl">
-              <Zap size={40} fill="white" />
+            <div className="mx-auto mb-6 flex h-20 w-20 items-center justify-center rounded-3xl bg-white shadow-2xl border border-iris/10">
+              <Zap size={40} className="text-iris" fill="#7B57CE" />
             </div>
 
             <h1 className="text-4xl font-black tracking-tight text-iris-dark">VibeScribe</h1>
             <p className="mt-3 text-iris-dark/40 text-xs font-bold uppercase tracking-[0.3em]">Elevated Intelligence</p>
-
           </div>
+
 
 
 
           <form onSubmit={handleLogin} className="space-y-6">
             <div className="space-y-2">
-              <label className="text-sm font-bold text-iris-text/70 ml-1">Username</label>
-
+              <label className="text-sm font-bold text-iris-text/70 ml-1">Email Address</label>
               <div className="relative">
-                <div className="absolute left-3 top-1/2 -translate-y-1/2 text-neutral-500">
+                <div className="absolute left-4 top-1/2 -translate-y-1/2 text-iris/40">
                   <User size={18} />
                 </div>
                 <input
-                  type="text"
-                  value={username}
-                  onChange={(e) => setUsername(e.target.value)}
+                  type="email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
                   className="w-full rounded-xl border border-iris/10 bg-iris/5 py-4 pl-12 pr-4 text-iris-dark placeholder-iris-dark/30 outline-none transition-all focus:border-iris/50 focus:bg-iris/10"
-                  placeholder="Enter username"
+                  placeholder="name@example.com"
                   required
                 />
-
               </div>
             </div>
+
 
 
             <div className="space-y-2">
               <label className="text-sm font-bold text-iris-text/70 ml-1">Password</label>
 
               <div className="relative">
-                <div className="absolute left-3 top-1/2 -translate-y-1/2 text-neutral-500">
+                <div className="absolute left-4 top-1/2 -translate-y-1/2 text-iris/40">
                   <Lock size={18} />
                 </div>
+
                 <input
                   type="password"
                   value={password}
@@ -116,8 +118,9 @@ export default function LoginPage() {
             <button
               type="submit"
               disabled={loading}
-              className="group relative w-full overflow-hidden rounded-2xl btn-iris py-4 font-black text-white transition-all active:scale-[0.98] disabled:opacity-50"
+              className="group relative w-full overflow-hidden rounded-2xl btn-iris py-4 font-black transition-all active:scale-[0.98] disabled:opacity-50"
             >
+
 
               <span className="relative flex items-center justify-center gap-3 uppercase tracking-widest text-xs">
                 {loading ? (
